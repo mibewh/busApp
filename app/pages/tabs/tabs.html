@@ -1,0 +1,14 @@
+<ion-navbar *navbar>
+  <ion-title>Gotta Go</ion-title>
+  <ion-buttons end>
+    <button royal>
+      <ion-icon name="search"></ion-icon>
+      Stops
+    </button>
+  </ion-buttons>
+</ion-navbar>
+<ion-tabs>
+  <ion-tab [root]="tab1Root" tabTitle="Saved" tabIcon="bookmark"></ion-tab>
+  <ion-tab [root]="tab2Root" tabTitle="Routes" tabIcon="bus"></ion-tab>
+  <ion-tab [root]="tab3Root" tabTitle="Nearby" tabIcon="map"></ion-tab>
+</ion-tabs>

@@ -1,0 +1,11 @@
+<ion-navbar *navbar>
+  <ion-title>{{stop.stop_name}}</ion-title>
+</ion-navbar>
+
+<ion-content class="stop-info">
+  <ion-list>
+    <ion-item *ngFor="#dep of departures">
+      {{dep.headsign + ', ' + dep.expected_mins + ' minutes'}}
+    </ion-item>
+  </ion-list>
+</ion-content>

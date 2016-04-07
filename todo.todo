@@ -1,0 +1,18 @@
+Services:
+  Stop Service:
+    ✔ Get all @done(2016-04-06 01:45) @project(Services / Stop Service)
+    ✔ Get closeby @done(2016-04-06 01:45) @project(Services / Stop Service)
+    ☐ Get stops on route
+    ☐ Get individual
+    ☐ Show the routes that each stop is on (Bubbles?)
+    ☐ Show the upcoming buses
+  Route Service:
+    ☐ Get all routes
+    ☐ Get individual
+    ☐
+Views:
+  ☐ Setup nav system
+Misc:
+  ☐ Comment up the code
+  ☐ Rework project goals
+  ☐ Maps?
