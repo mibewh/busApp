@@ -1,9 +1,19 @@
 
 <ion-content class="nearby">
+  <ion-refresher (refresh)="refresh($event)">
+    <ion-refresher-content
+      pullingIcon="arrow-dropdown"
+      refreshingSpinner="circles">
+    </ion-refresher-content>
+  </ion-refresher>
   <ion-list>
     <ion-item *ngFor="#stop of stops" (click)="openStop(stop)">
       {{stop.stop_name}}
+      <h1 item-right>
+        <favorite [stop]="stop"></favorite>
+      </h1>
     </ion-item>
+    <ion-item></ion-item>
   </ion-list>
 </ion-content>
 <button class="above" fab fab-bottom fab-right>

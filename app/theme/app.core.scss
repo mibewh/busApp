@@ -16,3 +16,17 @@
 .above {
   z-index: 5;
 }
+.circle {
+  border-radius: 50%;
+  width: 15px;
+  height: 15px;
+  display: inline-block;
+  margin-left: 2px;
+}
+.ion-md-star {
+  color: gold;
+}
+
+.extra-bottom {
+  margin-bottom: 15px;
+}

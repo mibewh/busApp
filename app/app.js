@@ -1,5 +1,5 @@
 import 'es6-shim';
-import {App, Platform} from 'ionic-angular';
+import {App, Platform, Storage, SqlStorage} from 'ionic-angular';
 import {StatusBar} from 'ionic-native';
 import {TabsPage} from './pages/tabs/tabs';
 
@@ -14,6 +14,18 @@ export class MyApp {
   }
 
   constructor(platform) {
+    var storage = new Storage(SqlStorage, {existingDatabase: true});
+    storage.get('route_changeset').then(null).catch(function(err) {
+      //Create blank changeset
+      storage.set('route_changeset', '');
+    });
+    storage.get('favorites').then(function(data) {
+      if(!data) {
+        console.log('Setting up favorites');
+        storage.set('favorites', JSON.stringify({}));
+      }
+    });
+
     this.rootPage = TabsPage;
 
     platform.ready().then(() => {

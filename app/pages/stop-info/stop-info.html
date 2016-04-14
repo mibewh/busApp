@@ -1,11 +1,25 @@
-<ion-navbar *navbar>
+<ion-navbar *navbar primary>
   <ion-title>{{stop.stop_name}}</ion-title>
 </ion-navbar>
 
 <ion-content class="stop-info">
+  <ion-refresher (refresh)="refresh($event)">
+    <ion-refresher-content
+      pullingIcon="arrow-dropdown"
+      refreshingSpinner="circles">
+    </ion-refresher-content>
+  </ion-refresher>
   <ion-list>
     <ion-item *ngFor="#dep of departures">
-      {{dep.headsign + ', ' + dep.expected_mins + ' minutes'}}
+      <h2>{{dep.headsign}}</h2>
+      <p>{{dep.expected_mins + ' min'}}</p>
+      <div class="circle" item-right [style.background-color]="bg(dep.route.route_color)"></div>
+    </ion-item>
+    <ion-item *ngIf="departures.length==0" class="text-center">
+      <p>No upcoming buses</p>
     </ion-item>
   </ion-list>
 </ion-content>
+<button class="above" fab fab-bottom fab-right>
+  <h1 class="extra-bottom"><favorite end [stop]="stop"></favorite></h1>
+</button>

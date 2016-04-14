@@ -21,4 +21,7 @@ export class Routes {
       this.routes = data.routes;
     });
   }
+  bg(color) {
+    return '#'+color;
+  }
 }

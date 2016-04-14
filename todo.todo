@@ -1,18 +1,25 @@
-Services:
-  Stop Service:
-    ✔ Get all @done(2016-04-06 01:45) @project(Services / Stop Service)
-    ✔ Get closeby @done(2016-04-06 01:45) @project(Services / Stop Service)
-    ☐ Get stops on route
-    ☐ Get individual
-    ☐ Show the routes that each stop is on (Bubbles?)
-    ☐ Show the upcoming buses
-  Route Service:
-    ☐ Get all routes
-    ☐ Get individual
-    ☐
-Views:
-  ☐ Setup nav system
-Misc:
-  ☐ Comment up the code
-  ☐ Rework project goals
-  ☐ Maps?
+Tidy Appearance:
+  ✔ Theme colors @done(2016-04-12 22:17) @project(Tidy Appearance)
+  ✔ Move minutes @done(2016-04-12 22:58) @project(Tidy Appearance)
+Available Routes next to Stops:
+  ✔ Add bubbles next to stops @done(2016-04-14 00:18) @project(Available Routes next to Stops)
+  ✔ Add bubbles for routes and saved stops @done(2016-04-14 00:18) @project(Available Routes next to Stops)
+Favorite Stops:
+  ✔ Local storage for favorites @done(2016-04-13 22:43) @project(Favorite Stops)
+  ✔ Option to add favorite (toggle) @done(2016-04-13 22:43) @project(Favorite Stops)
+  ✔ Do favorites Page @done(2016-04-13 23:31) @project(Favorite Stops)
+Refresh:
+  ✔ Pull down to refresh info views @done(2016-04-14 01:33) @project(Refresh)
+  ✔ Nearby stops @done(2016-04-14 01:46) @project(Refresh)
+  ✔ Individual stop @done(2016-04-14 01:33) @project(Refresh)
+
+Next Week:
+  ☐ With response from API managers, see if I can implement bubbles for all stops with realistic efficiency
+  ☐ If above is true, show stops in route?
+  ☐ Stop Search
+  ☐ Google Maps integration
+Retrieve Route Info:
+  ☐ Call GetVehicles, map so only one per route
+  ☐ For each vehicle, use trip_id to call GetStopTimesByTrip
+  ☐ Easily retrieve each stop from here
+  ☐ Save/Cache to corresponding stop if need be?

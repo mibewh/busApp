@@ -4,6 +4,7 @@
     <ion-item *ngFor="#route of routes">
       <!-- {{route.route_short_name + ' ' + route.route_long_name}} -->
       {{route.name}}
+      <div class="circle" item-right [style.background-color]="bg(route.route_color)"></div>
     </ion-item>
   </ion-list>
 </ion-content>

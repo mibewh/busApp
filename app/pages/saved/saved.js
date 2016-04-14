@@ -1,7 +1,8 @@
 import {Page, NavController} from 'ionic-angular';
 import {OnInit} from 'angular2/core';
 import {StopService} from '../../services/stop';
-import {StopInfo} from '../stop-info/stop-info'
+import {StopInfo} from '../stop-info/stop-info';
+import * as _ from 'lodash';
 
 //View saved bus stop info
 @Page({
@@ -19,13 +20,36 @@ export class Saved {
   }
   // Temporarily, print all stops
   ngOnInit() {
-    this.stopService.getStops().subscribe(data => {
-      this.stops = data.stops;
+    this.stops = [];
+    this.refresh();
+  }
+  onPageWillEnter() {
+    this.stopService.getFavorites().then(favs => {
+      var stops = _.values(favs);
+      if(!_.isEqual(_.map(this.stops,'stop_id'),_.map(stops,'stop_id'))) {
+        //Only refresh if something changed
+        this.refresh();
+      }
+    });
+  }
+  refresh(refresher) {
+    var stopService = this.stopService;
+    this.stopService.getFavorites().then(favs => {
+      this.stops = _.values(favs);
+      this.stops.forEach(function(stop) {
+        stopService.getStopRoutes(stop.stop_id).subscribe(data=>{
+          stop.routes = _.uniqBy(data.routes, 'route_color');
+        });
+      });
+      if(refresher) refresher.complete();
     });
   }
   //Open up the stop details page
   openStop(stop) {
     this.nav.push(StopInfo, {stop: stop});
+  }
+  bg(color) {
+    return '#'+color;
   }
 
 }

@@ -1,4 +1,4 @@
-<ion-navbar *navbar>
+<ion-navbar *navbar primary>
   <ion-title>Gotta Go</ion-title>
   <ion-buttons end>
     <button royal>
@@ -7,7 +7,7 @@
     </button>
   </ion-buttons>
 </ion-navbar>
-<ion-tabs>
+<ion-tabs primary [preloadTabs]="true">
   <ion-tab [root]="tab1Root" tabTitle="Saved" tabIcon="bookmark"></ion-tab>
   <ion-tab [root]="tab2Root" tabTitle="Routes" tabIcon="bus"></ion-tab>
   <ion-tab [root]="tab3Root" tabTitle="Nearby" tabIcon="map"></ion-tab>
