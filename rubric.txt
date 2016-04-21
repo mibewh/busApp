@@ -1,0 +1,6 @@
+Rubric:
+    Display a stop's routes in it's info page
+    Create way to access search page
+    Search for stops (live update after typing, click/tap opens the stop)
+    Maps for stops
+    Maps for routes

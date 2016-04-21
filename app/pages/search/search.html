@@ -1,0 +1,20 @@
+<!--
+  Generated template for the SearchPage page.
+
+  See http://ionicframework.com/docs/v2/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-navbar *navbar primary [hideBackButton]="true">
+  <ion-searchbar id="search" [(ngModel)]="query" [debounce]="500" [placeholder]="Search" (cancel)="hideSearch()"></ion-searchbar>
+</ion-navbar>
+
+<ion-content padding class="search">
+  <ion-list>
+    <ion-item *ngFor="#stop of stops | filter: query" (click)="openStop(stop)">
+      {{stop.stop_name}}
+    </ion-item>
+    <ion-item *ngIf="stops.length==0" class="text-center">
+      <p>No results</p>
+    </ion-item>
+  </ion-list>
+</ion-content>

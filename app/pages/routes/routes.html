@@ -1,7 +1,13 @@
 
 <ion-content class="routes">
+  <ion-refresher (refresh)="refresh($event)">
+    <ion-refresher-content
+      pullingIcon="arrow-dropdown"
+      refreshingSpinner="circles">
+    </ion-refresher-content>
+  </ion-refresher>
   <ion-list>
-    <ion-item *ngFor="#route of routes">
+    <ion-item *ngFor="#route of routes" (click)="openMap(route)">
       <!-- {{route.route_short_name + ' ' + route.route_long_name}} -->
       {{route.name}}
       <div class="circle" item-right [style.background-color]="bg(route.route_color)"></div>

@@ -4,7 +4,7 @@ import {OnInit, OnChanges} from 'angular2/core';
 import {StopService} from '../services/stop';
 import * as _ from 'lodash';
 
-
+//Represents a toggleable favorite star
 @Component({
   selector: 'favorite',
   template: '<ion-icon [name]="getIcon()" (click)="toggleFavorite($event)"></ion-icon>',
@@ -24,6 +24,7 @@ export class Favorite {
     this.stopID = this.stop.stop_id;
     if(!this.icon) this.icon = "star-outline";
   }
+  //Toggle the state of the stop, to favorite/not favorite
   toggleFavorite(event) {
     event.stopPropagation();
     this.stopService.getFavorites().then(favs=>{
@@ -37,7 +38,12 @@ export class Favorite {
       this.stopService.setFavorites(favs);
     });
   }
+  //Update the star on changes to make sure it is accurate
   ngOnChanges() {
+    this.updateIcon();
+  }
+  //Determine star state
+  updateIcon() {
     this.stopService.getFavorites().then(favs=>{
       if(!favs[this.stopID]) {
         this.icon = "star-outline";

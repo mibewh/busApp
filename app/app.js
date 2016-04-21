@@ -15,12 +15,9 @@ export class MyApp {
 
   constructor(platform) {
     var storage = new Storage(SqlStorage, {existingDatabase: true});
-    storage.get('route_changeset').then(null).catch(function(err) {
-      //Create blank changeset
-      storage.set('route_changeset', '');
-    });
     storage.get('favorites').then(function(data) {
       if(!data) {
+        //Create empty favorites object, if need be
         console.log('Setting up favorites');
         storage.set('favorites', JSON.stringify({}));
       }

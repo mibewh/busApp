@@ -14,12 +14,16 @@ Refresh:
   ✔ Individual stop @done(2016-04-14 01:33) @project(Refresh)
 
 Next Week:
-  ☐ With response from API managers, see if I can implement bubbles for all stops with realistic efficiency
-  ☐ If above is true, show stops in route?
-  ☐ Stop Search
-  ☐ Google Maps integration
-Retrieve Route Info:
-  ☐ Call GetVehicles, map so only one per route
-  ☐ For each vehicle, use trip_id to call GetStopTimesByTrip
-  ☐ Easily retrieve each stop from here
-  ☐ Save/Cache to corresponding stop if need be?
+  ✔ With response from API managers, see if I can implement bubbles for all stops with realistic efficiency @done(2016-04-20 00:37) @project(Next Week)
+  ✔ If above is true, show stops in route? @done(2016-04-20 00:37) @project(Next Week)
+
+Stop Search:
+  ✔ Flag to change status from search/not search @done(2016-04-20 21:38) @project(Stop Search)
+  ✔ Search results list @done(2016-04-20 21:38) @project(Stop Search)
+  ✔ Update on typing @done(2016-04-20 21:38) @project(Stop Search)
+Maps Integration:
+  ✔ Route map (when route clicked) @done(2016-04-21 00:03) @project(Maps Integration)
+  ✔ Show stop on map (button to access) @done(2016-04-21 00:03) @project(Maps Integration)
+
+✔ Test plan @done(2016-04-21 00:14)
+✔ Rubric @done(2016-04-21 00:03)

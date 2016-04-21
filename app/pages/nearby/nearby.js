@@ -23,9 +23,11 @@ export class Nearby {
   ngOnInit() {
     this.refresh();
   }
+  //Refresh when coming on to the page
   onPageWillEnter() {
     this.refresh();
   }
+  //Refresh nearby stops
   refresh(refresher) {
     this.stopService.getClosestStops().then(data => {
         this.stops = data.stops;

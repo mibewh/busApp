@@ -10,6 +10,10 @@
     </ion-refresher-content>
   </ion-refresher>
   <ion-list>
+    <ion-item (click)="openMap(stop)">
+      <ion-icon name="map"></ion-icon>
+      Show Map
+    </ion-item>
     <ion-item *ngFor="#dep of departures">
       <h2>{{dep.headsign}}</h2>
       <p>{{dep.expected_mins + ' min'}}</p>
@@ -20,6 +24,15 @@
     </ion-item>
   </ion-list>
 </ion-content>
-<button class="above" fab fab-bottom fab-right>
+<ion-toolbar position="bottom">
+  <div style="display: table; width: 100%;">
+    <div style="display: table-cell; vertical-align: middle;"><div *ngFor="#route of routes" class="circle" [style.background-color]="bg(route.route_color)"></div></div>
+    <h1 style="display: table-cell; vertical-align: middle; text-align: right;"><favorite [stop]="stop"></favorite></h1>
+  </div>
+  <!-- <ion-buttons end>
+    <h1 class="extra-bottom"><favorite end [stop]="stop"></favorite></h1>
+  </ion-buttons> -->
+</ion-toolbar>
+<!-- <button class="above" fab fab-bottom fab-right>
   <h1 class="extra-bottom"><favorite end [stop]="stop"></favorite></h1>
-</button>
+</button> -->

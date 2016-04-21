@@ -23,6 +23,7 @@ export class Saved {
     this.stops = [];
     this.refresh();
   }
+  //Refresh of page enter, if need be
   onPageWillEnter() {
     this.stopService.getFavorites().then(favs => {
       var stops = _.values(favs);
@@ -32,6 +33,7 @@ export class Saved {
       }
     });
   }
+  //Refresh the view of saved stops, in case one has been added/removed
   refresh(refresher) {
     var stopService = this.stopService;
     this.stopService.getFavorites().then(favs => {
@@ -48,6 +50,7 @@ export class Saved {
   openStop(stop) {
     this.nav.push(StopInfo, {stop: stop});
   }
+  //Output background string
   bg(color) {
     return '#'+color;
   }
