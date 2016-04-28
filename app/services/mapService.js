@@ -19,7 +19,7 @@ export class MapService {
       //Create the map
       var loc = new google.maps.LatLng(lat,lon);
       var opts = {
-        mapTypeId: google.maps.MapTypeId.ROADMAP
+        mapTypeId: google.maps.MapTypeId.ROADMAP,
         zoom: 16,
         center: loc,
       };
@@ -37,7 +37,7 @@ export class MapService {
       var centerStop = route[Math.floor(route.length/2)]; //Get the center element
       var centerLoc = new google.maps.LatLng(centerStop.lat, centerStop.lon);
       var opts = {
-        mapTypeId: google.maps.MapTypeId.ROADMAP
+        mapTypeId: google.maps.MapTypeId.ROADMAP,
         zoom: 14,
         center: centerLoc,
       };

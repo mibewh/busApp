@@ -1,6 +1,5 @@
 Rubric:
-    Display a stop's routes in it's info page
-    Create way to access search page
-    Search for stops (live update after typing, click/tap opens the stop)
-    Maps for stops
-    Maps for routes
+  Deploy app to a device
+  Create a UI for creating alarms at a stop
+  Set an alarm to send notification
+  Create notifications for the alarm

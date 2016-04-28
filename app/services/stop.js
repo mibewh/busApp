@@ -32,16 +32,6 @@ export class StopService {
     getClosestStops() {
       let params = new URLSearchParams();
       params.set('key', key);
-      //Bring this back for observables
-      // return Geolocation.watchPosition() //Get the current position
-      //       .flatMap((pos) => {
-      //         params.set('lat', pos.coords.latitude);
-      //         params.set('lon', pos.coords.longitude);
-      //         //Perform the API call to get closest stops
-      //         return this.http.get(base+'GetStopsByLatLon', {search: params})
-      //             .map(res => res.json())
-      //             .catch(this.doError)
-      //       });
       return Geolocation.getCurrentPosition().then(pos=>{ //Get the current position
         params.set('lat', pos.coords.latitude);
         params.set('lon', pos.coords.longitude);

@@ -1,8 +1,9 @@
-import {Page, NavController, NavParams} from 'ionic-angular';
+import {Page, Modal, NavController, NavParams} from 'ionic-angular';
 import {OnInit} from 'angular2/core';
 import {StopService} from '../../services/stop';
 import {Favorite} from '../../components/favorite';
 import {Map} from '../map/map';
+import {Alarm} from '../alarm/alarm';
 import {Observable} from 'rxjs/Observable';
 
 //Show info about a stop, including upcoming bus arrivals
@@ -41,7 +42,12 @@ export class StopInfo {
   openMap() {
     this.nav.push(Map, {stop: this.stop});
   }
+  showAlarmModal() {
+    var alarmModal = Modal.create(Alarm, {stop: this.stop, departures: this.departures});
+    this.nav.present(alarmModal);
+  }
   bg(color) {
     return '#'+color;
   }
+
 }

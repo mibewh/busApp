@@ -1,0 +1,39 @@
+<!--
+  Generated template for the AlarmPage page.
+
+  See http://ionicframework.com/docs/v2/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-navbar *navbar primary>
+  <ion-title>Set Alarm</ion-title>
+  <ion-buttons end>
+    <button (click)="close()"><ion-icon name="close"></ion-icon></button>
+  </ion-buttons>
+</ion-navbar>
+
+<ion-content padding class="alarm">
+  <ion-item>
+    <ion-label>Walk time</ion-label>
+    <ion-select [(ngModel)]="walk">
+      <ion-option value="0" checked="true">0 minutes</ion-option>
+      <ion-option *ngFor="#i of _.range(1, 11)" value="{{i}}">{{i}} minutes</ion-option>
+    </ion-select>
+  </ion-item>
+  <ion-list radio-group [(ngModel)]="selection">
+    <ion-list-header>Choose a bus</ion-list-header>
+    <ion-item *ngFor="#dep of departures; #i = index">
+      <!-- <h2>{{dep.headsign}}</h2> -->
+      <!-- <p>{{dep.expected_mins + ' min'}}</p> -->
+      <ion-label>
+        <h2>{{dep.headsign}}</h2>
+        <p>{{dep.expected_mins}} min</p>
+      </ion-label>
+      <ion-radio value="{{i}}"></ion-radio>
+    </ion-item>
+  </ion-list>
+</ion-content>
+<ion-toolbar position="bottom">
+  <ion-segment>
+    <button primary (click)="submit()">Create Alarm</button>
+  </ion-segment>
+</ion-toolbar>

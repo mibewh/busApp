@@ -38,6 +38,7 @@ export class Saved {
     var stopService = this.stopService;
     this.stopService.getFavorites().then(favs => {
       this.stops = _.values(favs);
+      console.log(this.stops);
       this.stops.forEach(function(stop) {
         stopService.getStopRoutes(stop.stop_id).subscribe(data=>{
           stop.routes = _.uniqBy(data.routes, 'route_color');
